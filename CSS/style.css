@@ -1,0 +1,90 @@
+/* styles.css */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f9f9f9;
+}
+
+.container {
+    width: 80%;
+    max-width: 1000px;
+    display: flex;
+    height: 600px; /* 높이를 설정하여 비율 유지 */
+}
+
+.profile-card {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.left-section {
+    flex: 1;
+    background-color: #fff;
+    padding: 20px;
+}
+
+/* input과 textarea에 공통 스타일 적용 */
+input,textarea {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+/* 포커스 상태 */
+input:focus,textarea:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+/* 비활성화 상태 */
+.input-box:disabled,textarea:disabled {
+    background-color: #f5f5f5;
+    border-color: #ddd;
+    width: 100%;
+    margin-bottom: 15px; /* 요소 간 간격 */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box; /* 패딩 포함 너비 계산 */
+    font-size: 14px;
+    color: #aaa;
+}
+
+/* textarea에 추가 스타일 */
+textarea {
+    height: 150px; /* 기본 높이 설정 */
+    resize: vertical; /* 높이만 조절 가능 */
+}
+
+
+
+.right-section {
+    flex: 1; /* 오른쪽 섹션을 화면의 절반 차지 */
+    background-color: #ff4d4d;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+    height: 100%; /* 높이를 부모에 맞춤 */
+}
+
+.right-section img {
+    width: 100%; /* 이미지가 오른쪽 전체에 꽉 차도록 설정 */
+    height: 100%; /* 높이를 섹션 전체에 맞춤 */
+    object-fit: cover; /* 이미지 비율 유지 */
+}
