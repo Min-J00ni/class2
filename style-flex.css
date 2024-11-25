@@ -1,0 +1,60 @@
+@charset "UTF-8";
+/* Design Flex Layout */
+
+/* Reset 스타일 */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #000;
+    display: flex;
+    flex-direction: column; /* 세로 방향 정렬 */
+    align-items: center; /* 중앙 정렬 */
+}
+
+/* 타이틀 스타일 */
+.title {
+    display: flex;
+    justify-content: center; /* 수평 중앙 정렬 */
+    text-align: center; /* 텍스트 중앙 정렬 */
+    font-size: 5rem;
+    color: white;
+    gap: 4px; /* 글자 간 간격 */
+    line-height: 150%; /* 줄 간격 */
+    letter-spacing: -1.32px; /* 문자 간격 */
+    margin-top: 160px;
+    margin-bottom: 80px; /* 텍스트와 이미지 사이 간격 */
+}
+
+/* 개별 폰트 스타일 */
+.font1 { font-family: 'Mogilte'; color: #ffffff; }
+.font2 { font-family: 'AirbnbCereal_W_Blk'; color: #ffffff; }
+.font3 { font-family: 'Alagard'; color: #ffffff; }
+.font4 { font-family: 'Nougat Script'; color: #ffffff; }
+.font5 { font-family: 'Sundries'; color: #ffffff; }
+.font6 { font-family: 'Alagard'; color: #ffffff; }
+.font7 { font-family: 'Nougat Script'; color: #ffffff; }
+.font8 { font-family: 'Sundries'; color: #ffffff; }
+
+/* 이미지 컨테이너 스타일 */
+.image-container {
+    display: flex;
+    flex-wrap: wrap; /* 이미지 줄바꿈 가능하게 */
+    justify-content: center; /* 수평 중앙 정렬 */
+    align-items: center; /* 수직 중앙 정렬 (필요 시) */
+    gap: 10px; /* 이미지 간격 */
+    width: 100%; /* 부모 컨테이너 너비 */
+    max-width: 1920px; /* 최대 너비 */
+    margin: 0 auto; /* 화면 중앙 배치 */
+    padding: 0, 360px; /* 좌우 여백 */
+    box-sizing: border-box; /* 패딩을 포함한 크기 계산 */
+}
+
+/* 이미지 스타일 */
+.image-container img {
+    flex: 1 1 calc(33.333% - 20px); /* 한 행에 3개 배치 */
+    max-width: calc(33.333% - 20px); /* 동일 크기 */
+    height: auto; /* 비율 유지 */
+    border-radius: 0px; /* 이미지 모서리 각지게 */
+    object-fit: cover; /* 이미지 내용 유지 */
+}
