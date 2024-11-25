@@ -57,4 +57,5 @@ body, html {
     height: auto; /* 비율 유지 */
     border-radius: 0px; /* 이미지 모서리 각지게 */
     object-fit: cover; /* 이미지 내용 유지 */
+    margin-bottom: 80px; /* 이미지와 푸터 사이 간격 */
 }
