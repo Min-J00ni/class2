@@ -1,76 +1,30 @@
 /* styles.css */
 body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    font-family: "Pretendard", -apple-system, "Segoe UI",
-        Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
-        sans-serif;
+    font-family: Arial, sans-serif;
 }
 
-/* 헤더 디자인 */
-header {
-    display: flex;
-    justify-content: space-between;
-    background-color: #ffffff;
-    padding-top: 32px;
-    padding-bottom: 32px;
-    padding-left: 60px;
-    padding-right: 60px;
-}
-
-header h1 {
-    font-size: 32px;
-}
-
-header button {
-    border: none;
-    background: none;
-    font-size: 28px;
-    cursor: pointer;
-}
-
-/* 탭 디자인 */
 .tabs {
     display: flex;
-    justify-content: flex-start;
-    margin-bottom: 20px;
-    margin-left: 60px;
-    margin-right: 60px;
+    background-color: #f4f4f4;
+    padding: 10px;
+    }
 
-}
-
-.tab-button {
-    padding: 40px 24px;
+    .tab-button {
+    margin-right: 10px;
+    padding: 10px;
     cursor: pointer;
-    background-color: #ffffff;
-    font-size: 28px;
-    border: #ffffff;
-    color: #b9b9b9;
-    transition: background-color 0.3s;
-}
+    }
 
-.tab-button.active {
-    color: #121212;
-    font-weight: 600;
-    background-color: #ffffff;
-    border-bottom: 2px solid #121212;
-}
-
-/*메뉴 디자인*/
     .menu {
-    padding-left: 60px;
-    padding-right: 60px;
-    padding-top: 40px;
+    margin-top: 20px;
     }
 
     .menu-item {
     border: 1px solid #ccc;
-    padding: 16px;
-    margin-bottom: 16px;
+    padding: 10px;
+    margin-bottom: 10px;
     }
 
-/*카트 디자인*/
     .cart {
     position: fixed;
     bottom: 0;
@@ -81,6 +35,3 @@ header button {
     padding: 10px;
     display: none;
     }
-
-/*결제 버튼 디자인*/
-
