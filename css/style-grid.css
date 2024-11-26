@@ -37,10 +37,14 @@ body, html {
 /* 이미지 컨테이너 스타일 */
 .image-containe {
     column-count: 3;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3열 그리드 */
     max-width: 1200px;
     padding: 16px;
+    margin: 0, auto;
     justify-content: center; /* 가로 중앙 정렬 */
     align-items: center; /* 세로 중앙 정렬 */
+    box-sizing: border-box;
 }
 /* 이미지 스타일 */
 .image-containeItem {
@@ -50,7 +54,7 @@ body, html {
     overflow: hidden;
 }
 .image-containe img {
-    width: 100%;
+    width: 100%; /* 너비를 부모 요소에 맞춤 */
     display: block;
     /* img 요소 하단의 여백 제거 */
 }
