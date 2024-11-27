@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moontarbicks</title>
+    <link rel="stylesheet" href="/class2/css/kiosk-up-css.css">
+</head>
+
+<body>
+    
+    <header class="header">
+        <div class="header-content">
+            <h1>Moontarbicks</h1>
+        </div>
+    </header>
+
+<div id="app">
+<!--탭 설정-->
+    <div class="tabs">
+        <button class="tab-button active" data-tab="1">Coffe</button>
+        <button class="tab-button" data-tab="2">Non Coffe</button>
+        <button class="tab-button" data-tab="3">Dessert</button>
+    </div>
+
+<!--커피메뉴 세팅-->
+    <div class="menu active" data-tab-content="1">
+    <div class="menu-item" data-name="아메리카노" data-price="3000">
+        <img src="/class2/img/cafe/amriocano.jpg" alt="아메리카노">
+        <p>아메리카노</p>
+        <span>3000원</span>
+        <button class="add-to-cart">추가</button>
+    </div>
+    <div class="menu-item" data-name="라떼" data-price="4000">
+        <img src="/class2/img/cafe/lette.jpg" alt="러떼">
+        <p>라떼</p>
+        <span>4000원</span>
+        <button class="add-to-cart">추가</button>
+    </div>
+    <div class="menu-item" data-name="모카 라떼" data-price="4300">
+        <img src="/class2/img/cafe/coffe2.jpg" alt="아메리카노">
+        <p>모카 라떼</p>
+        <span>4300원</span>
+        <button class="add-to-cart">추가</button>
+    </div>
+    <div class="menu-item" data-name="바닐라 라떼" data-price="4500">
+        <img src="/class2/img/cafe/vanila.jpg" alt="아메리카노">
+        <p>바닐라 라떼</p>
+        <span>4500원</span>
+        <button class="add-to-cart">추가</button>
+    </div>
+    <div class="menu-item" data-name="캬라멜마끼아또" data-price="5500">
+        <img src="/class2/img/cafe/caramal.jpg" alt="아메리카노">
+        <p>캬라멜마끼아또</p>
+        <span>5500원</span>
+        <button class="add-to-cart">추가</button>
+    </div>
+    <div class="menu-item" data-name="돌체라떼" data-price="5600">
+        <img src="/class2/img/cafe/dollcha.jpg" alt="돌체라떼">
+        <p>돌체라떼</p>
+        <span>5600원</span>
+        <button class="add-to-cart">추가</button>
+    </div>
+    </div>
+
+<!--논커피메뉴 세팅-->
+    <div class="menu" data-tab-content="2" style="display: none;">
+    <div class="menu-item" data-name="밀크티라떼" data-price="6000">
+        <img src="/class2/img/cafe/non2.jpg" alt="밀크티라떼">
+        <p>밀크티라떼</p>
+        <span>6000원</span>
+        <button class="add-to-cart">추가</button>
+    </div>
+    <div class="menu-item" data-name="차이티" data-price="6000">
+        <img src="/class2/img/cafe/non3.jpg" alt="차이티">
+        <p>차이티</p>
+        <span>6000원</span>
+        <button class="add-to-cart">추가</button>
+    </div>
+    <div class="menu-item" data-name="얼그레이티" data-price="6000">
+        <img src="/class2/img/cafe/tea1.jpg" alt="얼그레이티">
+        <p>흑임자라떼</p>
+        <span>6000원</span>
+        <button class="add-to-cart">추가</button>
+    </div>
+    <div class="menu-item" data-name="제주말차라떼" data-price="6000">
+        <img src="/class2/img/cafe/non1.jpg" alt="제주말차라떼">
+        <p>제주말차라떼</p>
+        <span>6000원</span>
+        <button class="add-to-cart">추가</button>
+    </div>
+    <div class="menu-item" data-name="히비스커스티" data-price="6000">
+        <img src="/class2/img/cafe/tea2.jpg" alt="히비스커스티">
+        <p>히비스커스티</p>
+        <span>6000원</span>
+        <button class="add-to-cart">추가</button>
+    </div>
+    </div>
+
+<!--디저트 메뉴 세팅-->
+<div class="menu" data-tab-content="3" style="display: none;">
+    <div class="menu-item" data-name="밀크티 케이크" data-price="6000">
+        <img src="/class2/img/cafe/cake4.jpg" alt="밀크티 케이크">
+        <p>밀크티 케이크</p>
+        <span>6000원</span>
+        <button class="add-to-cart">추가</button>
+    </div>
+    <div class="menu-item" data-name="생초코 케이크" data-price="6000">
+        <img src="/class2/img/cafe/cake2.jpg" alt="생초코케이크">
+        <p>생초코 케이크</p>
+        <span>6000원</span>
+        <button class="add-to-cart">추가</button>
+    </div>
+    <div class="menu-item" data-name="흑임자 케이크" data-price="6000">
+        <img src="/class2/img/cafe/cake1.jpg" alt="흑임자 케이크">
+        <p>흑임자 케이크</p>
+        <span>6000원</span>
+        <button class="add-to-cart">추가</button>
+    </div>
+    <div class="menu-item" data-name="제주말차 케이크" data-price="6000">
+        <img src="/class2/img/cafe/cake3.jpg" alt="말차케이크">
+        <p>제주말차 케이크</p>
+        <span>6000원</span>
+        <button class="add-to-cart">추가</button>
+    </div>
+    <div class="menu-item" data-name="블루베리치즈 케이크" data-price="6000">
+        <img src="/class2/img/cafe/cake5.jpg" alt="블루베리치즈 케이크">
+        <p>블루베리치즈 케이크</p>
+        <span>6000원</span>
+        <button class="add-to-cart">추가</button>
+    </div>
+</div>
+
+<!--카트에 담기-->
+    <div class="cart" id="cart">
+        <h3>Cart</h3><!--카트제목-->
+        <button id="clear-cart" class="clear-cart-btn">초기화</button>
+        <div id="cart-items"></div>
+    </div>
+
+<!--결제 버튼-->
+    <button id="buy-btn" class="buy-btn">0원 결제</button>
+</div>
+
+    <script src="/class2/js/kiosk-edit.js"></script>
+</body>
+</html>
