@@ -28,6 +28,51 @@ html, body {
     margin: 0;
 }
 
+.language-container {
+    position: relative;
+    display: inline-block;
+}
+
+.language {
+    padding: 10px 20px;
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.language:hover {
+    background-color: #ddd;
+}
+
+.language-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    width: 150px;
+    z-index: 1000;
+}
+
+.language-menu li {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.language-menu li:hover {
+    background-color: #f4f4f4;
+}
+
+.language-container:hover .language-menu {
+    display: block;
+}
 
 /* 탭 메뉴 스타일 */
 .tabs {

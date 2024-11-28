@@ -1,5 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     // 모든 탭 버튼과 메뉴를 가져오기
+    const languageBtn = document.getElementById("language-btn"); // `languageBtn` 변수명 수정
+    const languageMenu = document.getElementById("language-menu"); // 이미 선언된 변수 확인
     const tabButtons = document.querySelectorAll('.tab-button'); // 탭 버튼 가져오기
     const menus = document.querySelectorAll('.menu'); // 메뉴 가져오기
     const cart = document.getElementById('cart'); // 카트 가져오기
@@ -8,6 +10,32 @@ document.addEventListener('DOMContentLoaded', () => {
     const buyButton = document.getElementById('buy-btn'); // 결제 버튼 가져오기
 
     let cartItems = []; // 장바구니 항목 저장
+
+    // 토글 다국어 메뉴 표시
+    languageBtn.addEventListener("click", (event) => {
+        event.stopPropagation(); // 클릭 이벤트 전파 방지
+        languageMenu.style.display =
+            languageMenu.style.display === "block" ? "none" : "block";
+    });
+
+    // 메뉴 항목 클릭 시 선택 처리
+    languageMenu.addEventListener("click", (event) => {
+        if (event.target.tagName === "LI") {
+            const selectedLang = event.target.dataset.lang;
+            const selectedText = event.target.textContent;
+            languageBtn.textContent = selectedText; // 버튼 텍스트 업데이트
+            languageMenu.style.display = "none"; // 메뉴 숨기기
+
+            // 언어 변경 처리
+            console.log(`Selected language: ${selectedLang}`);
+            // 여기서 추가로 언어 변경 로직 구현 가능
+        }
+    });
+
+    // 메뉴 외부 클릭 시 숨기기
+    document.addEventListener("click", () => {
+        languageMenu.style.display = "none";
+    });
 
     // 기본 활성화 상태 설정
     const defaultTab = document.querySelector('.tab-button.active');
