@@ -1,6 +1,7 @@
 // TodoInput.jsx
 /* eslint-disable react/prop-types */
 import { useState } from 'react'; // React에서 상태(state)를 관리하기 위한 훅(hook)을 가져옴
+import style from "../css/TodoInput.module.css";
 
 // 할 일 추가 컴포넌트 정의 (사용자 입력을 받아 "할 일"을 등록하는 역할)
 const TodoInput = ({ addTodo }) => {
@@ -25,7 +26,7 @@ const TodoInput = ({ addTodo }) => {
 
     // ✅ UI 화면에 보이는 부분
     return (
-        <div>
+        <div className={style.container}>
             {/* 사용자가 입력할 수 있는 텍스트 상자 */}
             <input
                 type="text" // 텍스트를 입력하는 타입
@@ -36,6 +37,7 @@ const TodoInput = ({ addTodo }) => {
                 // 키보드 입력을 감지, Enter를 누르면 할 일 추가
                 placeholder="Plz add list🌟" 
                 // 아무것도 입력하지 않았을 때 보이는 안내 텍스트
+                className={style.todoInput}
             />
             {/* 사용자가 "등록" 버튼을 누르면 handleAdd() 실행 */}
             <button onClick={handleAdd}> Add </button>

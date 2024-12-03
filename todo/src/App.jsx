@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'; // React에서 상태(state)와 side effect를 관리하기 위한 훅(hook)
 import TodoInput from './components/TodoInput.jsx';
-import style from "./css/App.module.css"
+import style from "./css/App.module.css";
 
 
 function App() {
