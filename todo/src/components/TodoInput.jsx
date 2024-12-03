@@ -1,5 +1,3 @@
-// TodoInput.jsx
-/* eslint-disable react/prop-types */
 import { useState } from 'react'; // React에서 상태(state)를 관리하기 위한 훅(hook)을 가져옴
 import style from "../css/TodoInput.module.css";
 
