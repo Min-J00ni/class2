@@ -11,9 +11,9 @@ body {
   /* 수평 중앙 정렬 */
   align-items: center;     
   /* 수직 중앙 정렬 */
-  height: 100vh;           
+  height: calc(100vh-64px);           
   /* 화면 전체 높이를 채움 */
-  margin: 0;               
+  margin: 24px;               
   /* 기본 여백 제거 */
 }
 

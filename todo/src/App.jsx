@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'; // React에서 상태(state)와 side effect를 관리하기 위한 훅(hook)
 import TodoInput from './components/TodoInput.jsx';
+import TodoList from './components/TodoList.jsx';
 import style from "./css/App.module.css";
 
 
@@ -36,9 +37,49 @@ function App() {
     ]);
   };
 
-  /**
-   * UI 화면에 나타나는 부분
+
+    /**
+    * U 업데이트 - 변경된 텍스트 반영
+    * @param {*} id todo의 고유 값
+    * @param {*} updatedText 업데이트 반영 할 텍스트
+    */
+  const updateTodo = (id, updatedText) => {
+    setTodos(todos.map((todo) => (todo.id === id ? { ...todo, text: updatedText } : todo)));
+    /* .map() 기록 되어있는 todos를 순회하면서 동일한 행동을 해, 각 할일은 todo라고 할게
+    (삼항연산자) 현재 순회 중인 todos에서 todo가 변경된 텍스트를 반영할 아이템이라면
+    (true) ...todo 전개구문을 이용해서 객체의 모든 속성을 복사하고, text 속성만 새로운 텍스트로 변경해
+    (false) 기존 todo 그대로 둬 */
+  };
+
+
+    /**
+      * U 업데이트 - 완료여부를 토글하는 핸들러 함수
+   * @param {*} id todo의 고유 값
    */
+  const toggleComplete = (id) => {
+  setTodos(todos.map((todo) => (todo.id === id ? { ...todo, completed: !todo.completed } : todo)));
+  /* .map() 기록 되어있는 todos를 순회하면서 동일한 행동을 해, 각 할일은 todo라고 할게
+  (삼항연산자) 현재 순회 중인 todo가 완료여부를 표시하려는 아이템이라면
+  (true) ...todo 전개구문을 이용해서 객체의 모든 속성을 복사하고, completed 속성만 반전해
+  (false) 기존 todo 그대로 둬 */
+}
+
+  /**
+    * D 삭제
+    * @param {*} id todo의 고유 값
+    */
+  const deleteTodo = (id) => {
+    setTodos(todos.filter((todo) => todo.id !== id));
+    /* .filter() 주어진 조건을 만족하는 요소들로만 새로운 배열을 생성
+    삭제하려는 todo의 id가 파라미터로 들어가고
+    그 id와 같지 않은 todo만 모아서 배열생성하여 setTodos()로 부모상태 업데이트
+    => 그 id값을 가진 todo는 제외시켜 */
+  };
+
+
+  /**
+    * UI 화면에 나타나는 부분
+    */
   return (
     <div className={style.app}>
       {/* 제목 */}
@@ -47,7 +88,12 @@ function App() {
       </h1>
       {/* 할 일 추가하는 컴포넌트 */}
       <TodoInput addTodo={addTodo} />
-      {/* 할 일 목록을 보여주는 컴포넌트 (아직 추가되지 않았음, 나중에 작성 가능) */}
+      <TodoList
+        todos={todos}
+        updateTodo={updateTodo}
+        toggleComplete={toggleComplete}
+        deleteTodo={deleteTodo}
+      />
     </div>
   );
   
