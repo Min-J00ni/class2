@@ -19,8 +19,8 @@ const TodoItem = ({ todo, updateTodo, toggleComplete, deleteTodo }) => {
     // 기본값은 false (수정 중이 아님)으로 설정.
 
     const [editText, setEditText] = useState(todo.text);
-  // editText는 "수정 중인 입력 필드의 텍스트"를 저장합니다.
-  // 초기값으로 todo.text(현재 할 일의 내용)를 사용.
+    // editText는 "수정 중인 입력 필드의 텍스트"를 저장합니다.
+    // 초기값으로 todo.text(현재 할 일의 내용)를 사용.
 
     const handleEdit = () => {
     // 수정 버튼을 눌렀을 때 호출되는 함수.
@@ -35,7 +35,7 @@ const TodoItem = ({ todo, updateTodo, toggleComplete, deleteTodo }) => {
 
     return (
     <li className={style.li}> {/*리스트 항목*/} 
-      {/* 1. 체크박스: 할 일 완료 여부를 표시하고 토글(완료/미완료)할 수 있음 */}
+        {/* 1. 체크박스: 할 일 완료 여부를 표시하고 토글(완료/미완료)할 수 있음 */}
         <input
         type="checkbox"
         checked={todo.completed} // 완료 상태를 체크박스에 반영.
