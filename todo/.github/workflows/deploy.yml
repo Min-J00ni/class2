@@ -1,49 +1,40 @@
-name: Deploy Multiple React Projects
+name: Deploy React App
 
 on:
-  push:
-    branches:
-      - main # main 브랜치에 push될 때 실행
+  push:
+    branches:
+      - main # main 브랜치에 푸시될 때 실행
 
 jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
+  build-and-deploy:
+    runs-on: ubuntu-latest
 
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
+    steps:
+      # 1. 리포지토리 체크아웃
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-    - name: Setup Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: 22.11.0 # Node.js 버전
+      # 2. Node.js 설치
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
 
-    - name: Install dependencies and build todo
-      working-directory: ./todo
-# 하위 프로젝트 디렉토리명 1
-      run: |
-        npm install
-        npm run build
+      # 3. 의존성 설치
+      - name: Install dependencies
+        run: |
+          cd class2/todo
+          npm install
 
-    - name: Install dependencies and build nnn99
-      working-directory: ./nnn99
-# 하위 프로젝트 디렉토리명 2
-      run: |
-        npm install
-        npm run build
+      # 4. 빌드
+      - name: Build project
+        run: |
+          cd class2/todo
+          npm run build
 
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v4
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: |
-          ./todo/dist
-# 하위 프로젝트 배포명 1
-          ./nnn99/dist
-# 하위 프로젝트 배포명 2
-
-        destination_dir: |
-          todo
-# 하위 프로젝트 디렉토리명 1
-          nnn99
-# 하위 프로젝트 디렉토리명 2
+      # 5. 배포
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: class2/todo/build
