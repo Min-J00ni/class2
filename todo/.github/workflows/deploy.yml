@@ -18,20 +18,31 @@ jobs:
       with:
         node-version: 22.11.0 # Node.js 버전
 
-    - name: Install dependencies and build todo
-      working-directory: ./todo
+    - name: Install dependencies and build nnn99
+      working-directory: ./nnn99
 # 하위 프로젝트 디렉토리명 1
       run: |
         npm install
         npm run build
 
+    - name: Install dependencies and build todo
+      working-directory: ./todo
+# 하위 프로젝트 디렉토리명 2
+      run: |
+        npm install
+        npm run build
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v4
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: |
-          ./todo/dist
+          ./nnn99/dist
 # 하위 프로젝트 배포명 1
+          ./todo/dist
+# 하위 프로젝트 배포명 2
         destination_dir: |
+          nnn99
+# 하위 프로젝트 디렉토리명 1
           todo
+# 하위 프로젝트 디렉토리명 2
