@@ -14,7 +14,6 @@ li input[type="text"] {
     padding: 8px 12px;
     flex: 0 1 auto;
     border: 1px dashed #ddd;
-    background: #f1f8ff;
 }
 li div {
     display: flex;
