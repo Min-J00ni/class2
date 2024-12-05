@@ -83,7 +83,7 @@ function App() {
   return (
     <div className={style.app}>
       {/* 제목 */}
-      <h1>Daily
+      <h1>to
       <br />To-Do List<br />
       </h1>
       {/* 할 일 추가하는 컴포넌트 */}
