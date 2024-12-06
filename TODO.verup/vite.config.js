@@ -5,4 +5,8 @@ import react from '@vitejs/plugin-react-swc'
 export default defineConfig({
   plugins: [react()],
   base: "/class2/TODO.verup/",
+  build: {
+    outDir: '../dist/TODO.verup',
+    emptyOutDir: false,
+  },
 })
