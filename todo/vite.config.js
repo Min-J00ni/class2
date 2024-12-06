@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()],
   base: "/class2/todo/",
   build: {
-    outDir: '../dist.todo',
+    outDir: '../dist/todo',
     emptyOutDir: false,
   },
 });
