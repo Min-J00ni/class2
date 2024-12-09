@@ -1,0 +1,47 @@
+/* 헤더 전체 컨테이너 */
+.headerContainer {
+    display: flex;
+    justify-content: space-between; /* 타이틀과 버튼을 양쪽에 배치 */
+    align-items: center; /* 세로 정렬 */
+    padding: 16px;
+    border-bottom: 1px solid #ddd; /* 헤더 하단 경계선 */
+}
+
+/* 타이틀 영역 */
+.titleContainer {
+    position: relative; /* 완료 아이콘(absolute) 위치 조정을 위해 필요 */
+}
+
+/* 타이틀 텍스트 스타일 */
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333; /* 기본 텍스트 색상 */
+    display: inline-block; /* 텍스트와 완료 개수를 정렬 */
+}
+
+/* 완료된 리스트 개수가 0일 때 스타일 */
+.completedCount {
+    font-size: 18px;
+    font-weight: normal; /* 기본 텍스트 두께 */
+    margin-left: 8px; /* 타이틀과 간격 */
+    color: #666; /* 기본 색상 (회색) */
+}
+
+/* 완료된 리스트 개수가 1 이상일 때 강조 스타일 */
+.completedCountActive {
+    font-size: 18px;
+    font-weight: bold; /* 굵게 표시 */
+    margin-left: 8px;
+    color: #00eaff; /* 강조 색상 (파란색) */
+}
+
+/* 완료 아이콘 스타일 */
+.completeIcon {
+    position: absolute; /* 타이틀 근처에 고정 */
+    top: 50%; /* 세로 중앙 정렬 */
+    left: 120%; /* 완료 개수 오른쪽에 배치 */
+    transform: translateY(-50%); /* 세로 중앙 정렬 보정 */
+    width: 24px; /* 아이콘 크기 */
+    height: 24px;
+}
