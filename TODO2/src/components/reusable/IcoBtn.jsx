@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../css/IcoBtn.module.css"; // CSS 모듈 import
+import styles from "../../css/IcoBtn.module.css"; // CSS 모듈 import
 
 function IconButton({ icon: Icon, onClick, size = 32, iconSize = 24, style = {}, ...props }) {
   return (

@@ -1,8 +1,8 @@
 import React from "react";
-import IconButton from "../common/IconButton"; // 공통 컴포넌트 (아이콘 버튼)
+import IcoBtn from "./reusable/IcoBtn.jsx"; // 공통 컴포넌트 (아이콘 버튼)
 import { Add as PlusIcon } from "@mui/icons-material"; // Google Material Icons에서 + 아이콘
-import styles from "./Header.module.css"; // CSS 모듈로 스타일 불러오기
-import CompleteIcon from "../assets/complete-icon.svg"; // 에셋 폴더에서 완료 아이콘 불러오기
+import styles from "../css/Header.module.css"; // CSS 모듈로 스타일 불러오기
+//import CompleteIcon from "../assets/complete-icon.svg"; // 에셋 폴더에서 완료 아이콘 불러오기
 
 function Header({ completedCount, onAddCategory }) {
     // 조건에 따라 다른 스타일 클래스 이름을 설정
@@ -23,15 +23,15 @@ return (
             <span className={completedCountClass}>{completedCount}</span>
         </h1>
         {/* 꾸밈용 SVG 이미지 (에셋에서 불러옴) */}
-        <img
+        {/*<img
             src={CompleteIcon} // 완료 아이콘 이미지
             alt="완료 아이콘"
             className={styles.completeIcon} // 스타일 클래스 적용
-        />
+        />*/}
         </div>
 
         {/* + 버튼: 카테고리 추가 */}
-        <IconButton
+        <IcoBtn
             icon={PlusIcon} // Google Material Icons의 + 아이콘
             size={32} // 클릭 영역 크기 (40px)
             iconSize={24} // 아이콘 크기 (24px)

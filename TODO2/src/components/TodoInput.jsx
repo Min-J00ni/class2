@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Input from "./Input"; // 재사용 Input 컴포넌트 불러오기
+import Input from "./reusable/Input.jsx"; // 재사용 Input 컴포넌트 불러오기
 
 function TodoInput({ onAdd }) {
 const [todo, setTodo] = useState("");

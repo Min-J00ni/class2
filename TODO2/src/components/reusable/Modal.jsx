@@ -1,11 +1,12 @@
 import React from "react";
-import styles from "./Modal.module.css"; // CSS 모듈 import
+import styles from "../../css/Modal.module.css"; // CSS 모듈 import
 import IcoBtn from "./IcoBtn"; // 공통 아이콘 버튼
 import { Close as CloseIcon } from "@mui/icons-material"; // Google Material Icons Close 아이콘
 
-function Modal({ title, children, onClose }) {
+
+function Modal({ Header, Content, Footer, onClose }) {
     return (
-    <div className={styles.overlay}>
+        <div className={styles.overlay}>
         <div className={styles.modal}>
         {/* 타이틀 영역 (title이 있을 경우에만 렌더링) */}
         {title && (
@@ -21,11 +22,14 @@ function Modal({ title, children, onClose }) {
         </div>
     )}
 
-        {/* 모달 내용 */}
-        <div className={styles.content}>{children}</div>
+            {/* 콘텐츠 */}
+            <div className={styles.content}>{Content}</div>
+
+            {/* 푸터 */}
+            {Footer && <div className={styles.footer}>{Footer}</div>}
         </div>
-    </div>
-);
+        </div>
+    );
 }
 
 export default Modal;

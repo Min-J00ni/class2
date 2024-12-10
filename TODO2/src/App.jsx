@@ -1,32 +1,33 @@
 import React, { useState } from "react";
-import Header from "./Header";
-import Modal from "./Modal"; // 모달 컴포넌트를 불러옴
+import Header from "./components/Header.jsx"; // Header 컴포넌트
+import Addmodal from "./components/Addmodal.jsx"; // Addmodal 컴포넌트
 
 function App() {
-  const [isModalOpen, setIsModalOpen] = useState(false); // 모달 상태 (true: 열림, false: 닫힘)
+  const [isModalOpen, setModalOpen] = useState(false); // 모달 열림/닫힘 상태 관리
 
   // 모달 열기
-  const handleOpenModal = () => {
-    setIsModalOpen(true); // 모달 상태를 true로 설정
-  };
+  const handleOpenModal = () => setModalOpen(true);
 
   // 모달 닫기
-  const handleCloseModal = () => {
-    setIsModalOpen(false); // 모달 상태를 false로 설정
+  const handleCloseModal = () => setModalOpen(false);
+
+  // 저장 핸들러
+  const handleSaveCategory = (category) => {
+    console.log("저장된 카테고리:", category); // 저장된 데이터를 콘솔에 출력 (또는 API 호출 등)
+    setModalOpen(false); // 저장 후 모달 닫기
   };
 
   return (
     <div>
-      {/* 헤더 컴포넌트 */}
-      <Header onAddCategory={handleOpenModal} completedCount={0} />
+      {/* Header에 모달 열기 핸들러 전달 */}
+      <Header onAddCategory={handleOpenModal} completedCount={3} />
 
       {/* 모달 컴포넌트 */}
       {isModalOpen && (
-        <Modal onClose={handleCloseModal}>
-          <h2>카테고리 추가</h2>
-          <input type="text" placeholder="카테고리 이름 입력" />
-          <button onClick={handleCloseModal}>닫기</button>
-        </Modal>
+        <Addmodal
+          onClose={handleCloseModal} // 닫기 핸들러 전달
+          onSave={handleSaveCategory} // 저장 핸들러 전달
+        />
       )}
     </div>
   );
