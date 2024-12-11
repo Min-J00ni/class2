@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Modal from "./reusable/Modal.jsx"; // 공통 Modal 컴포넌트
 import Input from "./reusable/Input.jsx"; // 재사용 가능한 Input 컴포넌트
-import Button from "./reusable/Btn"; // 공통 버튼 컴포넌트
+import Btn from "./reusable/Btn.jsx"; // 공통 버튼 컴포넌트
 import styles from "../css/Addmodal.module.css"; // 이 모달만의 커스텀 스타일
 
 /**
@@ -10,7 +10,7 @@ import styles from "../css/Addmodal.module.css"; // 이 모달만의 커스텀 �
     * - 입력 필드와 색상 선택기를 포함하고, 저장 버튼을 통해 데이터를 저장할 수 있습니다.
     * - 공통 Modal 컴포넌트를 활용해 Header, Content, Footer를 동적으로 구성합니다.
    */
-function ModalWithContent({ onClose, onSave }) {
+function Addmodal({ onClose, onSave }) {
     // 카테고리 이름을 관리하는 상태
     const [categoryName, setCategoryName] = useState(""); // 사용자 입력값 (카테고리명)
     const [textColor, setTextColor] = useState("#000000"); // 사용자 선택값 (텍스트 색상)
@@ -74,13 +74,13 @@ const content = (
     */
 const footer = (
     <div className={styles.buttonContainer}>
-        <Button
+        <Btn
         onClick={handleSave} // 저장 버튼 클릭 시 호출
         variant="primary" // 버튼 스타일 (Primary 버튼)
         size="large" // 버튼 크기 (Large 크기)
         >
         저장 {/* 버튼 텍스트 */}
-        </Button>
+        </Btn>
     </div>
 );
 

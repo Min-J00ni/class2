@@ -1,0 +1,25 @@
+.categoryContainer {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+}
+
+.categoryHeader {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.categoryTitle {
+    margin: 0;
+}
+
+.addTodoButton {
+    background-color: #ffffff;
+    color: #121212;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}

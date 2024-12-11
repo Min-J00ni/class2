@@ -1,27 +1,21 @@
 import React from "react";
 import styles from "../../css/IcoBtn.module.css"; // CSS 모듈 import
 
-function IconButton({ icon: Icon, onClick, size = 32, iconSize = 24, style = {}, ...props }) {
-  return (
-    <button
-      onClick={onClick}
-      className={styles.button} // 기본 스타일 적용
+const IcoBtn = ({ icon: Icon, size = 32, iconSize = 24, onClick, ...props }) => (
+  <button
+    onClick={onClick}
+    className={styles.button} // 스타일 적용
+    style={{ width: size, height: size }}
+    {...props}
+  >
+    <Icon
       style={{
-        width: size, // 버튼 클릭 영역 크기
-        height: size,
-        ...style, // 사용자 정의 스타일 적용
+        width: iconSize,
+        height: iconSize,
       }}
-      {...props}
-    >
-      <Icon
-        style={{
-          width: iconSize, // 아이콘 크기
-          height: iconSize,
-        }}
-        className={styles.icon}
-      />
-    </button>
-  );
-}
+      className={styles.icon} // 아이콘 스타일 적용
+    />
+  </button>
+);
 
 export default IcoBtn;

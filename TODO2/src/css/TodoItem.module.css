@@ -1,0 +1,19 @@
+.todoItemContainer {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    border: 1px solid #ccc;
+    padding: 8px;
+    border-radius: 4px;
+}
+
+.checkbox {
+    margin-right: 8px;
+}
+
+.deleteButton {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: #f44336;
+}
